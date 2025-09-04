@@ -6,6 +6,13 @@ from apiappTest.models import Blog
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model  = get_user_model()
+        fields = ["id", "username", "email", "password", "first_name", "last_name",
+                  "bio","profile_picture","facebook","youtube","instragram","twitter"]
+        
+
+class UserRegistrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model  = get_user_model()
         fields = ["id", "username", "email", "password", "first_name", "last_name" ]
         extra_kwargs = {'password': {'write_only': True}}
 
